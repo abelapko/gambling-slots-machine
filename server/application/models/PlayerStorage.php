@@ -24,7 +24,7 @@ class PlayerStorage extends \CI_Model implements PlayerInterface
 	{
 		$this->db->insert('players', [
 			'session_id' => $sessionId,
-			'balance' => 2000,
+			'balance' => 1000,
 			'total_bets' => 0,
 			'total_wins' => 0,
 			'total_spins' => 0,
@@ -69,7 +69,7 @@ class PlayerStorage extends \CI_Model implements PlayerInterface
 	{
 		$query = $this->db->get_where('players', ['id' => $player_id]);
 		$result = $query->row();
-		return $result ? $result->balance : 2000.00;
+		return $result ? $result->balance : 1000.00;
 	}
 
 	public function getRTP(int $player_id): float

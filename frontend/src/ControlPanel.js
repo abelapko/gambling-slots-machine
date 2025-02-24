@@ -6,7 +6,7 @@ export default class ControlPanel extends Container {
     constructor(app) {
         super();
 
-        this.balance = 2000;
+        this.balance = 1000;
         this.bet = 100;
         this.lines = 10;
 

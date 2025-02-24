@@ -50,7 +50,7 @@ return [
         [2, 0, 0, 0, 2]
     ],
 
-    'INITIAL_BALANCE' => 2000,
+    'INITIAL_BALANCE' => 1000,
     'BET_SIZES' => [1, 5, 10, 25, 50],
     'DEFAULT_BET' => 10,
 ];

@@ -22,7 +22,7 @@ class Migration_Create_players_table extends CI_Migration {
 			],
 			'balance' => [
 				'type' => 'FLOAT',
-				'default' => 2000.00
+				'default' => 1000.00
 			],
 			'total_bets' => [
 				'type' => 'FLOAT',
