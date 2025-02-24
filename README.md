@@ -3,6 +3,7 @@
 ## About
 
 This project is a server-side implementation of the "Burning Love" slot machine game, inspired by the original version from [booming-games.com](https://booming-games.com). It replicates the game’s mechanics, including spins, winning lines, and balance management, without bonus rounds or free spins.
+For a detailed description of the architecture, see [Project Architecture](docs/architecture.md).
 
 ---
 
