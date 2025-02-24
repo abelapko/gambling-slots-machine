@@ -132,17 +132,18 @@ The frontend communicates with the backend using HTTP requests:
 
 ## **4. Database Structure**
 
-The MySQL database stores minimal player data:
+The MySQL database stores player data with the following schema:
 
-### **Players Table (`players`)**
-| Column       | Type        | Description |
-|-------------|------------|-------------|
-| `id`        | INT (PK)    | Primary Key |
-| `session_id`| VARCHAR    | Unique Player Session |
-| `balance`   | FLOAT      | Player’s Current Balance |
-| `wins`      | INT        | Number of wins |
-| `losses`    | INT        | Number of losses |
-| `total_spins`| INT       | Total spins played |
+#### **Players Table (`players`)**
+| Column           | Type        | Description |
+|-----------------|------------|-------------|
+| `id`            | INT (PK)    | Primary Key, Auto Increment |
+| `session_id`    | VARCHAR(128) | Unique session identifier |
+| `balance`       | FLOAT       | Player’s current balance (default 1000.00) |
+| `total_bets`    | FLOAT       | Total amount bet by the player (default 0) |
+| `total_wins`    | FLOAT       | Total winnings of the player (default 0) |
+| `total_spins`   | INT         | Total spins played (default 0) |
+| `winning_spins` | INT         | Number of winning spins (default 0) |
 
 ## **5. Deployment & Development Workflow**
 - The project runs inside **Docker**.
