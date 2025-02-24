@@ -36,7 +36,7 @@ export default class SpinButton extends Container {
 
         EventEmitter.on('balanceUpdated', this.updateButtonState.bind(this));
         EventEmitter.on('spinStart', this.disableButton.bind(this));
-        EventEmitter.on('spinEnd', this.enableButton.bind(this));
+        EventEmitter.on('spinEnd', this.updateButtonState.bind(this));
     }
 
     playSpinSound() {

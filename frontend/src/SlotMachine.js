@@ -108,7 +108,7 @@ export default class SlotMachine extends Container {
         ApiService.spin(bet, lines).then(data => {
             this.animateSpin(data.reels, data.details);
             EventEmitter.emit('balanceUpdated', data.balance);
-            EventEmitter.emit('spinEnd');
+            EventEmitter.emit('spinEnd', data.balance);
         }).catch(error => {
             console.error("Spin API error:", error);
         });

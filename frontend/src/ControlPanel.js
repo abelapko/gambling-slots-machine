@@ -1,5 +1,6 @@
 import { Container, Text } from 'pixi.js';
 import ApiService from './api.js';
+import EventEmitter from "./EventEmitter.js";
 
 export default class ControlPanel extends Container {
     constructor(app) {
@@ -32,6 +33,7 @@ export default class ControlPanel extends Container {
             const data = await ApiService.getBalance();
             if (data && data.balance !== undefined) {
                 this.updateBalance(data.balance);
+                EventEmitter.emit('balanceUpdated', data.balance);
             }
         } catch (error) {
             console.error('Ошибка загрузки баланса:', error);
