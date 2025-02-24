@@ -1,0 +1,38 @@
+services:
+  frontend-cli:
+    build:
+      context: ./docker/frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+
+  app:
+    build:
+      context: ./docker/server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./server:/app
+    environment:
+      - APACHE_RUN_USER=#1000
+      - APACHE_RUN_GROUP=#1000
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: game_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

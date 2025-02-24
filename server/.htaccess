@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # ✅ Разрешаем доступ к /assets/ и /dist/
+    RewriteCond %{REQUEST_URI} ^/(assets|dist)/ [NC]
+    RewriteRule .* - [L]
+
+    # ✅ Убедитесь, что файлы или директории существуют, иначе перенаправьте на index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # ✅ Разрешаем CORS для фронтенда
+    Header Set Access-Control-Allow-Origin "http://localhost:3000"
+    Header Set Access-Control-Allow-Credentials "true"
+    Header Set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header Set Access-Control-Allow-Headers "Origin, Content-Type, Accept, Authorization"
+</IfModule>

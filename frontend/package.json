@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@pixi/filter-blur": "^7.4.2",
+    "@pixi/filter-drop-shadow": "^5.2.0",
+    "eventemitter3": "^5.0.1",
+    "gsap": "^3.12.7",
+    "pixi.js": "^8.8.0"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "slots.js",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "babel-loader": "^9.2.1",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
