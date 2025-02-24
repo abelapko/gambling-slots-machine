@@ -8,10 +8,9 @@ This project is a server-side implementation of the "Burning Love" slot machine 
 
 ## Demo
 
-<video width="640" controls autoplay loop>
-  <source src="docs/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img src="/docs/demo.gif" alt="demo">
+
+Video with sound [here](/docs/demo.mp4).
 
 ---
 
