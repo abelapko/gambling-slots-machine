@@ -51,37 +51,37 @@ graph TD;
 ### **Mathematical Server Formulas**
 #### **1. RTP Calculation (Return to Player):**
 The RTP shows how much of the money bet will be returned to players over time:
-\[
-RTP = \left( \frac{Total Wins}{Total Bets} \right) \times 100\%
-\]
+```
+RTP = (Total Wins / Total Bets) * 100%
+```
 - **Total Wins** – The total amount paid out to players.
 - **Total Bets** – The total amount wagered by all players.
 - **Target RTP Adjustment:** The system adjusts symbol probabilities dynamically to maintain the target RTP:
-\[
-AdjustedWeight(symbol) = Weight(symbol) - \left( \frac{(CurrentRTP - TargetRTP)}{10} \right)
-\]
+```
+AdjustedWeight(symbol) = Weight(symbol) - ((CurrentRTP - TargetRTP) / 10)
+```
 
 #### **2. Probability of a Symbol Appearing:**
 Each symbol has a chance of appearing, based on its assigned weight:
-\[
-P(symbol) = \frac{Weight_{symbol}}{Total Weight}
-\]
+```
+P(symbol) = Weight(symbol) / Total Weight
+```
 - **Weight of a symbol** – A predefined value determining its rarity.
 - **Total Weight** – The sum of all symbol weights.
 
 #### **3. Expected Win Calculation:**
 This calculates how much a player is expected to win on average:
-\[
-Expected\ Win = \sum (Probability\ of\ Line) \times (Payout\ of\ Line)
-\]
+```
+Expected Win = Σ (Probability of Line * Payout of Line)
+```
 - **Probability of Line** – The chance that a winning line appears.
 - **Payout of Line** – The reward for hitting that line.
 
 #### **4. Balance Update After a Spin:**
 To update the player's balance after a spin:
-\[
-New\ Balance = Old\ Balance - Bet + Winnings
-\]
+```
+New Balance = Old Balance - Bet + Winnings
+```
 - **Old Balance** – The player's balance before the spin.
 - **Bet** – The amount wagered on the spin.
 - **Winnings** – The amount won from the spin.
